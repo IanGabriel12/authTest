@@ -1,4 +1,4 @@
-async function login(event) {
+async function handleLogin(event) {
     event.preventDefault()
 
     const username = document.querySelector('input[name=username]').value
@@ -10,6 +10,8 @@ async function login(event) {
             password
         })
 
+        login(username, response.data.token)
+
         window.location.href = './homePage.html'
     } catch(err) {
         console.log(err)
@@ -18,4 +20,4 @@ async function login(event) {
 
 const form = document.querySelector('form')
 
-form.addEventListener('submit', login)
+form.addEventListener('submit', handleLogin)

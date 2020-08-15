@@ -37,7 +37,7 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/private', authMiddleware, (req, res) => {
-    return res.send('This is private')
+    return res.send('Essa é uma mensagem privada')
 })
 
 app.listen(3333)

@@ -6,19 +6,25 @@
     <link rel='stylesheet' href="../styles/globals.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/homePage.css">
+
+    <script src="../scripts/authentication.js"></script>
+    <script>
+        if(!isLoggedIn()){
+            window.location.replace('./loginForm.html')
+        }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
     <title>AuthTest</title>
 </head>
 <body>
     <div class="home-content">
-        <h1>Olá, fulano</h1>
-        <button onClick="logout()" class='button-secondary'>Logout</button>
+        <h1></h1>
+        <p></p>
+        <button class='button-secondary'>Logout</button>
     </div>
 
-    <script>
-        function logout(){
-            window.location.href = './loginForm.html'
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/homePage.js"></script>
 </body>
 </html>
