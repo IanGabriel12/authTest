@@ -24,7 +24,11 @@
     <script>
         const form = document.querySelector('form');
 
-        form.addEventListener('submit', event => event.preventDefault())
+        form.addEventListener('submit', event => {
+            event.preventDefault()
+
+            window.location.href = './homePage.html'
+        })
     </script>
 </body>
 </html>
