@@ -10,7 +10,7 @@
     <title>AuthTest</title>
 </head>
 <body>
-    <form onSubmit="handleSubmit()" class="login-form">
+    <form class="login-form">
         <fieldset>
             <label for="username">Usuário:</label>
             <input type="text" id='username' name='username'>
@@ -21,14 +21,7 @@
         </fieldset>
         <button type="submit" class='button-secondary'>Login</button>
     </form>
-    <script>
-        const form = document.querySelector('form');
-
-        form.addEventListener('submit', event => {
-            event.preventDefault()
-
-            window.location.href = './homePage.html'
-        })
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../scripts/loginForm.js"></script>
 </body>
 </html>
