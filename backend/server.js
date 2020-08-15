@@ -1,6 +1,7 @@
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const authConfig = require('./src/config/auth.json')
+const authMiddleware = require('./src/middleware/authMiddleware')
 
 const app = express()
 app.use(express.json())
@@ -11,7 +12,7 @@ app.get('/', (req, res) => {
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body
-    
+
     if (username !== 'ian123'){
         return res.status(401).send({error: 'Usuário inválido'})
     }
@@ -30,6 +31,10 @@ app.post('/login', (req, res) => {
     return res.send({
         token,
     })
+})
+
+app.get('/private', authMiddleware, (req, res) => {
+    return res.send('This is private')
 })
 
 app.listen(3333)
